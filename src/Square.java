@@ -37,7 +37,8 @@ public class Square {
         }
         catch (Exception e){
             System.out.println("请不要输入非整数的其他类型");
-            //处理机制
+//            处理机制
+//            处理机制
             //Exception是所有异常类的父类
         }
 
