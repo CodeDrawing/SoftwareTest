@@ -39,7 +39,7 @@ public class InputPhoneNumber  {
             return false;
         }
         for (int i = numberLen-7; i <=numberLen-5 ; i++) {
-            if(arrayListPhoneNumber.get(i)<'2'||arrayListPhoneNumber.get(i)>'9'){
+            if (arrayListPhoneNumber.get(i) < '1' || arrayListPhoneNumber.get(i) > '9') {
                 return false;
             }
         }
@@ -48,18 +48,17 @@ public class InputPhoneNumber  {
 //    地区码：空白或三位数字；
     public boolean areaNumber(ArrayList<Character> arrayListPhoneNumber){
         int numberLen = arrayListPhoneNumber.size();
-        if(numberLen==7){
-            System.out.println("地区码为空");
-        }else if(numberLen<10){
+        if (numberLen > 7 && numberLen < 10) {
             System.out.println("地区码不足3位");
             return false;
-        }else if(numberLen>10){
+        } else if (numberLen > 10) {
             System.out.println("地区码只能为空或者3位");
             return false;
-        }
-        for (int i = numberLen-10; i <=numberLen-8 ; i++) {
-            if(arrayListPhoneNumber.get(i)<'0'||arrayListPhoneNumber.get(i)>'9'){
-                return false;
+        } else if (numberLen == 10) {
+            for (int i = numberLen - 10; i <= numberLen - 8; i++) {
+                if (arrayListPhoneNumber.get(i) < '0' || arrayListPhoneNumber.get(i) > '9') {
+                    return false;
+                }
             }
         }
         return true;
@@ -83,9 +82,12 @@ public static void main(String[] args) {
 //    System.out.println("开始验证地区码");
 //    System.out.println(b2);
 //    判断
-    if(b1==false||b==false||b2==false){
+//    System.out.println(b);
+//    System.out.println(b1);
+//    System.out.println(b2);
+    if (b1 == false || b == false || b2 == false) {
         System.out.println("该电话号码不符合规范！");
-    }else{
+    } else {
         System.out.println("该电话号码符合规范！");
     }
 }
